@@ -1,0 +1,44 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- H2 Database Driver -->
+        <property name="hibernate.connection.driver_class">
+            org.h2.Driver
+        </property>
+
+        <!-- H2 Database URL -->
+        <property name="hibernate.connection.url">
+            jdbc:h2:mem:messdb
+        </property>
+
+        <!-- H2 Username -->
+        <property name="hibernate.connection.username">
+            sa
+        </property>
+
+        <!-- H2 Password -->
+        <property name="hibernate.connection.password">
+        </property>
+
+        <!-- H2 Dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.H2Dialect
+        </property>
+
+        <!-- Show SQL queries -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Automatically create tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapping Classes -->
+        <mapping class="com.example.entity.Supplier"/>
+        <mapping class="com.example.entity.Item"/>
+        <mapping class="com.example.entity.Supply"/>
+
+    </session-factory>
+</hibernate-configuration>
